@@ -20,7 +20,7 @@ class Triangle
 
   def valid
     valid_triangle = [(a + b > c), (a + c > b), (b + c > a)]
-    [a, b, c].each { |s| valid_triangle << false if s <= 0 }
+    [a, b, c].each { |side| valid_triangle << false if side <= 0 }
     raise TriangleError if valid_triangle.include?(false)
   end
 
