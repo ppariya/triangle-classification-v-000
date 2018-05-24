@@ -9,4 +9,5 @@ class Triangle
     else
       self.isosceles
     end
+  end
 end
