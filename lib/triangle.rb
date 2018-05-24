@@ -1,21 +1,24 @@
 class Triangle
   # write code here
-  attr_accessor :equilateral, :isosceles, :scalene, :side_1, :side_2, :side_3
+  attr_accessor :equilateral, :isosceles, :scalene, :a, :b, :c
   def initialize (a, b, c)
-    @side_1 = a
-    @side_2 = b
-    @side_3 = c
+    @a = a
+    @b = b
+    @c = c
   end
 
   def kind
-    if side_1 == side_2 && side_2 == side_3
+    if a == b && b == c
       :equilateral
-    elsif side_1 == side_2 || side_2 == side_3 || side_1 == side_3
+    elsif a == b || b == c || a == c
       :isosceles
     else
       :scalene
     end
   end
+
+  def valid
+    triangle = [(a + b > c), (a + c > b), (b + c > a)]
 
   class TriangleError < StandardError
 
